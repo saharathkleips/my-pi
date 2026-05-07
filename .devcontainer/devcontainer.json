@@ -4,6 +4,9 @@
   "runArgs": ["--userns=keep-id"],
   "remoteUser": "node",
   "postCreateCommand": "bash .devcontainer/setup.sh ${containerWorkspaceFolder}",
+  "containerEnv": {
+    "TZ": "${localEnv:TZ:UTC}"
+  },
   "remoteEnv": {
     "PNPM_HOME": "/home/node/.local/share/pnpm",
     "PATH": "${containerEnv:PATH}:/home/node/.local/share/pnpm",
