@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 HOME_DIR="${HOME:-/home/node}"
 PI_HOME="${PI_HOME:-$HOME_DIR/.pi}"
 PI_AGENT_DIR="${PI_AGENT_DIR:-$PI_HOME/agent}"
-PI_CODING_AGENT_VERSION="${PI_CODING_AGENT_VERSION:-0.67.0}"
+PI_CODING_AGENT_VERSION="$(sed -nE 's/.*"@mariozechner\/pi-coding-agent": "([^"]+)".*/\1/p' "$SCRIPT_DIR/package.json")"
 
 echo "Setting up Pi workflow..."
 
