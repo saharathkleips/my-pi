@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "lint": "oxlint .",
-    "lint:fix": "oxlint --fix . || true",
+    "lint:fix": "oxlint --fix .",
     "format": "oxfmt --check .",
     "format:fix": "oxfmt .",
+    "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
     "@mariozechner/pi-coding-agent": "0.67.0",
+    "@types/node": "^25.6.0",
     "oxfmt": "0.45.0",
     "oxlint": "1.60.0",
     "simple-git-hooks": "^2.11.0",
