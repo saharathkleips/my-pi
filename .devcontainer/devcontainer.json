@@ -1,0 +1,27 @@
+{
+  "name": "my-pi",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
+  "runArgs": ["--userns=keep-id"],
+  "remoteUser": "node",
+  "postCreateCommand": "bash .devcontainer/setup.sh ${containerWorkspaceFolder}",
+  "remoteEnv": {
+    "PNPM_HOME": "/home/node/.local/share/pnpm",
+    "PATH": "${containerEnv:PATH}:/home/node/.local/share/pnpm",
+    "npm_config_store_dir": "/home/node/.local/share/pnpm/store",
+    "npm_config_minimum_release_age": "10080",
+    "npm_config_trust_policy_ignore_after": "10080",
+    "npm_config_block_exotic_subdeps": "true",
+    "npm_config_trust_policy": "no-downgrade"
+  },
+  "mounts": [
+    // pnpm mounts
+    "source=pnpm,target=/home/node/.local/share/pnpm,type=volume",
+    "source=node-modules-${devcontainerId},target=${containerWorkspaceFolder}/node_modules,type=volume",
+    // shell mounts
+    "source=shell-history-${devcontainerId},target=/home/node/.shellhistory,type=volume",
+    // personalization mounts
+    "source=${localEnv:HOME}/.local/share/devcontainer,target=/home/node/.local/share/devcontainer,type=bind,readonly",
+    // pi mounts
+    "source=pi-${devcontainerId},target=/home/node/.pi,type=volume"
+  ]
+}
