@@ -18,11 +18,11 @@ Essentially you can run this project's `setup.sh`, but the devcontainer needs to
 }
 ```
 
-2. On your machine, expose this repo through that mount:
+2. On your machine, copy this repo into that mounted directory:
 
 ```bash
 mkdir -p ~/.local/share/devcontainer
-ln -s $PATH_TO_MY_PI/my-pi ~/.local/share/devcontainer/my-pi
+cp -R $PATH_TO_MY_PI/my-pi ~/.local/share/devcontainer/my-pi
 ```
 
 3. In the other project, execute the setup script:

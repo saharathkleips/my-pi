@@ -10,7 +10,7 @@ PI_DIR="$HOME_DIR/.pi"
 LOCAL_SETUP="$WORKSPACE_DIR/.devcontainer/local.setup.sh"
 PNPM_DIR="$HOME_DIR/.local/share/pnpm"
 NODE_MODULES_DIR="$WORKSPACE_DIR/node_modules"
-SHARED_HOST_DIR="$HOME_DIR/.local/share/devcontainer/"
+SHARED_HOST_DIR="$HOME_DIR/.local/share/devcontainer"
 
 echo "Preparing mounted directories..."
 mkdir -p "$LOCAL_DIR" "$SHELL_HISTORY_DIR" "$PNPM_DIR" "$NODE_MODULES_DIR" "$PI_DIR"
